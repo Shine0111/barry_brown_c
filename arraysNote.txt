@@ -1,0 +1,22 @@
+Array of 20 doubles, called ages:
+    double ages[20];
+
+    Indexed 0 to (array length - 1);
+
+Array of 50 blaps, called bloop:
+    blap bloop[50]; //blaps don't exist but we can create a type called blap -> typedef int blap;
+
+Array of 1000 pixels, called img: 
+    pixel img[1000];
+
+Assign the number 18 to element 0 of ages: 
+
+    ages[0] = 18;
+
+Copy element 0 into element 5 of ages:
+
+    ages[5] = ages[0];
+
+
+* We don't have .length in C; so the programer should keep track of the length of the array they created (e.g: define a const ).
+*C does not prevent you from accessing elements of the array that doesn't exist.
