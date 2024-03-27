@@ -1,0 +1,7 @@
+* A string is a null-terminated ("\0") array of char.
+*--> Always take null char into account !. ex: If I anticipate that the char[] will get 5 chars, the array should at least be length 6.
+* If nothing is in between [] in char string[] --> C will create an array with the exact length need for the value I assign it to.
+
+* In scanf: %s will stop reading the input once there is a white space.
+*scanf doesn't know when to stop! We can do e.g: if the array size is 10 --> %9s . 9 bcs the array needs a space for the null value for termination of the array.
+--> Best is to use fgets(); fgets(string, max_length, input_source); We can pass the actual length of the char[]; keyboard ===> stdin
