@@ -10,5 +10,12 @@ int main()
 
     fgets(name, SIZE, stdin);
 
+    // Replace \n with \0
+    int i = 0;
+    while (name[i] != '\n')
+        i++;
+
+    name[i] = '\0'; // Issue is if the name[] don't have a \n in it the loop will be infinite unless by chance it will encounter a \n in the garbage memory
+
     printf("%s %s!\n", greet, name);
 }
