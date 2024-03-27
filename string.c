@@ -10,5 +10,5 @@ int main()
 
     fgets(name, SIZE, stdin);
 
-    printf("%s %s\n", greet, name);
+    printf("%s %s!\n", greet, name);
 }
