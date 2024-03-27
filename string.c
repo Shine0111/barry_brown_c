@@ -7,6 +7,8 @@ int main()
 
     char name[SIZE];
     printf("Enter your name: ");
-    scanf("%9s", name); // Without the ampersand--> & , because it's an array not a primitive type.
+
+    fgets(name, SIZE, stdin);
+
     printf("%s %s\n", greet, name);
 }
