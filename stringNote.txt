@@ -8,3 +8,5 @@
 * fgets also knows how to deal with white spaces.
 
 * To remove the new line at the end of the input string made by the enter. We can replace \n to \0.
+
+* When we pass string into a function, we don't need to pass the length --> Since string is null terminated, we always know the end of the array. (ex: in a regular array we don't know the end the array)
