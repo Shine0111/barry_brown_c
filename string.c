@@ -4,10 +4,10 @@
 int countUpper(char str[])
 {
     int i = 0;
-    int uppers = 0;
-    while (str[i] != '\0')
+    int uppers = 0;        // variable to store the number of upper from the counter loop
+    while (str[i] != '\0') // stop on the \0 since any regular array is null terminated
     {
-        if (str[i] != '\0')
+        if (str[i] >= 65 && str[i] <= 90) // Using their ASCII code
         {
             uppers++;
         }
@@ -38,4 +38,6 @@ int main()
 
     // Count the number of upperCase character in the string
     int uppers = countUpper(name); // When we pass string into a function, we don't need to pass the length
+
+    printf("There is %d upper cases in your name!", uppers);
 }
