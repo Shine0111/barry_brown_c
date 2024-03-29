@@ -89,7 +89,8 @@ int main()
     printf("Average of values : %f.\n", ave);
 
     // rotate the array
+    printf("Rotate twice!\n");
     rotate(nums, SIZE);
-    printf("Rotated array: ");
+    rotate(nums, SIZE);
     printArray(nums, SIZE);
 }
