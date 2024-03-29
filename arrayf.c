@@ -50,6 +50,22 @@ int sumArray(int arr[], int length)
     return sum;
 }
 
+float averageArray(int arr[], int length)
+{
+    float sum = sumArray(arr, length);
+    return sum / length;
+}
+
+void rotate(int arr[], int length)
+{
+    int temp = arr[0];
+    for (int i = 0; i < length - 1; i++)
+    {
+        arr[i] = arr[i + 1];
+    }
+    arr[length - 1] = temp;
+}
+
 int main()
 {
     // Use time as seed for rand() || we can also use the poll of entropy in the system
@@ -67,4 +83,13 @@ int main()
     // add up all the values inside the array
     int sum = sumArray(nums, SIZE);
     printf("Sum of values : %d.\n", sum);
+
+    // compute the average
+    float ave = averageArray(nums, SIZE);
+    printf("Average of values : %f.\n", ave);
+
+    // rotate the array
+    rotate(nums, SIZE);
+    printf("Rotated array: ");
+    printArray(nums, SIZE);
 }
