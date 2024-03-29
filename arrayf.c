@@ -37,6 +37,19 @@ int findMax(int arr[], int length)
     return largestSoFar;
 }
 
+int sumArray(int arr[], int length)
+{
+    // initialize a variable to 0
+    int sum = 0;
+    // loop through the array and add value to the value of sum
+    for (int i = 0; i < length; i++)
+    {
+        sum += arr[i];
+    }
+    // return the final value of sum
+    return sum;
+}
+
 int main()
 {
     // Use time as seed for rand() || we can also use the poll of entropy in the system
@@ -49,6 +62,9 @@ int main()
 
     // find max function
     int max = findMax(nums, SIZE);
+    printf("Largest element is : %d.\n", max);
 
-    printf("Largest element is : %d.", max);
+    // add up all the values inside the array
+    int sum = sumArray(nums, SIZE);
+    printf("Sum of values : %d.\n", sum);
 }
