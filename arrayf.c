@@ -2,17 +2,18 @@
     From lecture's array lesson
 */
 #include <stdio.h>
+#include <stdlib.h> // for random()
+#include <time.h>
 
 #include <limits.h> // For minimun possible integer
 
-#define SIZE 5
+#define SIZE 10
 
-void inputArray(int arr[], int length)
+void fillArrayRandom(int arr[], int length)
 {
     for (int i = 0; i < length; i++)
     {
-        printf("Enter number %d: ", i);
-        scanf("%d", &arr[i]);
+        arr[i] = rand() % 50 - 10; // Get a random number btwn -10 and 39
     }
 }
 
@@ -38,9 +39,12 @@ int findMax(int arr[], int length)
 
 int main()
 {
+    // Use time as seed for rand() || we can also use the poll of entropy in the system
+    srand(time(NULL));
+
     int nums[SIZE];
 
-    inputArray(nums, SIZE);
+    fillArrayRandom(nums, SIZE);
     printArray(nums, SIZE);
 
     // find max function
