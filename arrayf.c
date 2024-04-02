@@ -7,7 +7,7 @@
 
 #include <limits.h> // For minimun possible integer
 
-#define SIZE 10
+#define SIZE 9
 
 void fillArrayRandom(int arr[], int length)
 {
@@ -66,6 +66,16 @@ void rotate(int arr[], int length)
     arr[length - 1] = temp;
 }
 
+void reverse(int arr[], int length)
+{
+    for (int i = 0; i < length / 2; i++)
+    {
+        int temp = arr[length - i - 1];
+        arr[length - i - 1] = arr[i];
+        arr[i] = temp;
+    }
+}
+
 int main()
 {
     // Use time as seed for rand() || we can also use the poll of entropy in the system
@@ -92,5 +102,10 @@ int main()
     printf("Rotate twice!\n");
     rotate(nums, SIZE);
     rotate(nums, SIZE);
+    printArray(nums, SIZE);
+
+    // reverse array
+    printf("Reverse!\n");
+    reverse(nums, SIZE);
     printArray(nums, SIZE);
 }
