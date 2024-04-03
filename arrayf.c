@@ -76,6 +76,19 @@ void reverse(int arr[], int length)
     }
 }
 
+void shuffle(int arr[], int length)
+{
+    for (int iterations = 0; iterations < length * 3; iterations++)
+    {
+        // Take two random element in array
+        int i = rand() % length;
+        int j = rand() % length;
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
+
 int main()
 {
     // Use time as seed for rand() || we can also use the poll of entropy in the system
@@ -107,5 +120,10 @@ int main()
     // reverse array
     printf("Reverse!\n");
     reverse(nums, SIZE);
+    printArray(nums, SIZE);
+
+    // shuffle using random swaping
+    printf("Shuffle!\n");
+    shuffle(nums, SIZE);
     printArray(nums, SIZE);
 }
