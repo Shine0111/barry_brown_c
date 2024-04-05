@@ -23,20 +23,24 @@ int main()
     // Ask user for length of game, from 3-20
     int boardLength = getInt("Enter size of Board: ", 3, 20);
 
+    printf("Board Length: %d.\n", boardLength);
+
     // Create board. Shuffle numbers.
     int board[boardLength];
 
     // Fill board in order with numbers 1...boardLength
     fillBoard(board, boardLength);
+    printf("Board Filled !, \n");
+    printBoard(board, boardLength);
 
     // Shuffle board.
     // I recommend initially only the shuffleBoard line
     // so it doesn't get stuck in an infinite loop. Once shuffleBoard
     // is working, uncomment the rest of the loop.
-    while (isSorted(board, boardLength))
-    {
-        shuffleBoard(board, boardLength);
-    }
+    // while (isSorted(board, boardLength) == 1)
+    // {
+    shuffleBoard(board, boardLength);
+    // }
 
     // Print board
     printBoard(board, boardLength);
@@ -98,6 +102,7 @@ void printBoard(int arr[], int length)
     {
         printf("%d ", arr[i]);
     }
+    printf("\n");
 }
 
 void shuffleBoard(int arr[], int length)
@@ -127,7 +132,7 @@ int isSorted(int arr[], int length)
     int isSorted = 0;
     for (int i = 0; i < length; i++)
     {
-        if (arr[i] > arr[i + 1])
+        if (arr[i] < arr[i + 1])
         {
             isSorted = 0;
         }
