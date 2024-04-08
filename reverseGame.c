@@ -48,6 +48,8 @@ int main()
 
     int gameOver = 0;
     int moves = 0;
+
+    // Game loop
     while (!gameOver)
     {
         // Ask user for amount to reverse
