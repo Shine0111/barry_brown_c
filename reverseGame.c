@@ -37,11 +37,12 @@ int main()
     // I recommend initially only the shuffleBoard line
     // so it doesn't get stuck in an infinite loop. Once shuffleBoard
     // is working, uncomment the rest of the loop.
-    // while (isSorted(board, boardLength) == 1)
-    // {
-    shuffleBoard(board, boardLength);
-    // }
+    while (isSorted(board, boardLength) == 1)
+    {
+        shuffleBoard(board, boardLength);
+    }
 
+    printf("Board Shuffled!\n");
     // Print board
     printBoard(board, boardLength);
 
@@ -129,18 +130,13 @@ void reverse(int arr[], int length, int amt)
 
 int isSorted(int arr[], int length)
 {
-    int isSorted = 0;
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < length - 1; i++) // length - 1 because I have to avoid out of bounds issue
     {
-        if (arr[i] < arr[i + 1])
+        if (arr[i] > arr[i + 1])
         {
-            isSorted = 0;
-        }
-        else
-        {
-            isSorted = 1;
+            return 0;
         }
     }
 
-    return isSorted;
+    return 1;
 }
